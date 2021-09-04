@@ -1,0 +1,141 @@
++++++++++++++++++++++
+Q & A
++++++++++++++++++++++
+Q. What is JUnit?
+A: JUnit is a Unit testing framework that is used to test the Java code.
+
+Q. Why is Unit Testing Important?
+A: In Unit Testing we test a specific unit rather than the whole application. A Unit can be a single method, a group of method or it can also be a group of classes. Typically in most scenarios when we talk about Unit Testing, we will be talking about a method or a specific group of methods.
+The Advantage of Unit Testing is that, once we write a Unit Test for a particular method, we will be able to run the unit test automatically within milliseconds and check whether all the test conditions for that particular method are passing or not.
+
+Q. What are test suites?
+A: When we group a number of JUnit tests to run them together, we call it test suite.
+
+Q. What is SUT (System Under Test)?
+A: The system or class that we are performing the test on is called SUT (System Under Test).
+
+Q. What is Mocking in unit testing?
+A: > Mocking means creating fake version of an external or internal service that can stand in for the real one, helping your tests run more quickly and more reliably.
+When your implementation interacts with an object's properties, rather than its function or behavior, a mock can be used. Mocks can handle dynamic inputs.
+> Mocking is creating objects that simulate the behavior of real objects. Unlike stubs, mocks can be dynamically created from code - at runtime.
+Mocks offer more functionality than stubbing. You can verify method calls and a lot of other things.
+> Instead of creating a real live class, there are frameworks which would allow you to create a dummy class or a mock class for that specific interface.
+> Mock does not get any business logic from actual class it is mocking.
+
+Q. What is stubbing?
+A: Stubbing, like mocking, means creating a stand-in, but a stub only mocks the behavior, but not the entire object. 
+This is used when your implementation only interacts with a certain behavior of the object.
+Stub is nothing but a Java class that returns some kind of dummy data.
+Stubs are used in simple scenarios.
+Disadvantage of stubbing - 
+a. As stub is a java class, so the data inside it is hardcoded and so we cannot use it to test different inputs. So, dynamic inputs make stubs complex.
+b. Stubs have maintainance headache.
+
+Q. What is Mockito?
+A: Mockito is a open sourse mocking framework that can be used with other unit testing frameworks like JUnit.
+
+Q. Why we use Mockito?
+A: When we do unit testing for a codebase where the code is dependent on a code that will be developed by some other team or retrieved information from some external interface (Some web service), then we use mocking/stubbing (the suitable one) to mock/stub that dependent part, so that we do not need to wait fot that dependent part.
+Mockito makes mocking easy. Mokito Annotations:
+> @Mock - Mckito automatically creates Mock of the following kind.
+> @InjectMocks - This will look into all the dependencies of the class and checks if any matches the created Mock and automatically inject it in.
+> @Captor - Creates Argument Captors.
+> @RunWith(MockitoJUnitRunner.class) - This runner allows us to use the Mockito annotations. And all the annotations are autowired.
+
+Q. What are Static imports for Mockito?
+A: Window > Preferences > Java > Editor > Content Assist > Favorites > New Type > Browse
+org.junit.Assert
+org.mockito.BDDMockito
+org.mockito.Mockito
+org.hamcrest.Matchers
+org.hamcrest.CoreMatchers
+
+Q. What happens if an unstubbed method is called?
+A: By default, for all methods that return a value, a mock will return either null, a primitive/primitive wrapper value, or an empty collection, as appropriate. 
+For example 0 for an int/Integer and false for a boolean/Boolean.
+This is called a nice mock.
+
+Q. What is BDD?
+A: BDD - Behavior Driven Development.
+In software engineering, behavior-driven development (BDD) is an agile software development process that encourages collaboration among developers, quality assurance testers, and customer representatives in a software project. It encourages teams to use conversation and concrete examples to formalize a shared understanding of how the application should behave.
+Most of the Agile projects user stories. In BDD while mocking, we break the user story into multiple scenarios. Each scenario is represented as when-then conditions. Once, the when-then conditions are created then we write tests for each scenarios. We write tests in the same format as the scenarios, Given -> When -> Then.
+
+Q. What is a SPY?
+A: A spy gets all logic from the Class that the we are mocking. We can create real object of the Classes unlike mocks. But with spy, we can override particular methods using stub. Other functionalities of the class stays the same.
+> Spy is also called Partial mock.
+> Spy enables us to watch real action! As well as change behavior when needed.
+> Avoid Spy in projects!
+
+Q. Why does Mockito not allow stubbing final & private methods?
+A: Mockito does not allow stubbing final & private methods
+> Mockito doesn't mock private methods:
+Firstly, we are not dogmatic about mocking private methods. We just don't care about private methods because from the standpoint of testing, private methods don't exist. Here are a couple of reasons Mockito doesn't mock private methods:
+1. It requires hacking of classloaders that is never bullet proof and it changes the API (you must use custom test runner, annotate the class, etc.).
+2. It is very easy to work around - just change the visibility of method from private to package-protected (or protected).
+3. It requires the team to spend time implementing & maintaining it. And it does not make sense given point (2) and a fact that it is already implemented in different tool (powermock).
+3. Finally... Mocking private methods is a hint that there is something wrong with Object Oriented understanding. In OO you want objects (or roles) to collaborate, not methods. Forget about pascal & procedural code. Think in objects.
+4. Mockito promotes good design.
+> Mockito Cannot mock final methods - their real behavior is executed without any exception. Mockito cannot warn you about mocking final methods so be vigilant.
+> Mockito also does not allow us to mock a static method.
+
+Q. What is PowerMock?
+A: PowerMock lets us mock a static, private and final methods.
+
+Q. How to write good unit tests?
+A:
+> Readable - The tests must have good readability.
+>> Naming test methods - <Method>_<Scenario>_<Result>; | e.g: saveChangedProducts_ProductInScreenAndNotInDatabase_ProductInserted();
+>> Split the test into BDD format i.e. Given -- Then -- When
+> A test should fail only when there is a business logic problem and not when something else changes.
+
++++++++++++++++++++++
+Points
++++++++++++++++++++++
+> When we write a unit test, there is a specific project structure that we would need to create. When we create a Maven Project, that structure is created automatically. Maven is a Java Build Tool.
+
+> archetypes are Maven's way of creating sample projects. For example, when we want to create a simple Spring MVC, we can just choose archetype of Spring MVC in Maven and that will help us to create a simple Spring MVC project very quickly.
+
+> For Maven Projects we need to provide a Group Id and a Artifact Id. (e.g: Group Id: com.deepbarankar; Artifact Id: JunitCourse).
+
+> Unit Test code should not be mixed with our source code. Because, if we mix test codes then when the JAR is built, test files will also go along with the code. So, keep them separate.
+
+> When creating JUnit Test Case in the src/test/java folder, keep the Package same as the Class that we are going to test and select the class that we are going to test in the Class under test filed using Browse... Naming Convention of the JUnit Test Case: <ClassName>Test.
+
+> A Test is successful if there are no failures. If there are no expectations that are not matched, then it means, the test has succeeded. So, absence of failure is success. A Test without a fail condition is a bad test. A good test should have a fail condition.
+
+> We use the pom.xml file in Maven to download all the required dependencies.
+
+> Mockito created nice mocks. Nice mocks are the mocks, which assigns a default value to methods that were not explicitly called using the mock object.
+
+> In easy mocks, for unassigned methods, the test fails. So, it is better to use Mockito who implements nice mock.
+
+> (Given -> When -> Then) along with (Mockito Annotations).
+
+> Do not write mocks for Static, final or private methods. These are bad practices.
+
++++++++++++++++++++++
+File Chronology
++++++++++++++++++++++
+==========
+JUnit > https://github.com/in28minutes/JUnitIn28Minutes
+==========
+1. StringHelperTest
+2. QuickBeforeAfterTest
+3. ArraysCompareTest
+4. StringHelperParameterizedTest
+5. AllTests
+
+==========
+Mockito > https://github.com/in28minutes/MockitoTutorialForBeginners
+==========
+1. FirstMockitoTest                        
+2. TodoBusinessImplStubTest                
+3. ListTest                                
+4. TodoServiceStub                         
+5. TodoBusinessImplMockTest                
+6. HamcrestMatchersTest                    
+7. TodoBusinessImplMockitoInjectMockTest   
+8. SpyTest                                 
+9. MockingStaticMethodTest                 
+10. InvokingPrivateMethodTest              
+11. MockingConstructorTest                 

@@ -1,0 +1,20 @@
+package com.deepbarankar.mockito;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+//TodoService.java
+//public List<String> retrieveTodos(String user);
+
+//TodoBusinessImpl.java
+//public List<String> retrieveTodoRelatedToString(String user);
+
+public class FirstMockitoTest {
+
+	@Test
+	public void test() {
+		assertTrue(true);
+	}
+
+}

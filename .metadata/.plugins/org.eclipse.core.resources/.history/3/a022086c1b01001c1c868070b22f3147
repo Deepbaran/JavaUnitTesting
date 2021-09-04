@@ -1,0 +1,14 @@
+package com.deepbarankar.mockito;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class SpyTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

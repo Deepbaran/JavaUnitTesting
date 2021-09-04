@@ -1,0 +1,38 @@
+package com.deepbarankar.business;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.deepbarankar.data.api.TodoService;
+
+public class TodoBusinessImplMockTest {
+
+	@Test
+	public void testRetrieveTodosRelatedToSpring_usingMock() {
+		TodoService todoServiceMock = mock(TodoService.class);
+		
+		List<String> allTodos = Arrays.asList("Learn Spring MVC",
+				"Learn Spring", "Learn to Dance");
+		when(todoServiceMock.retrieveTodos("Dummy")).thenReturn(allTodos);
+		
+		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
+		List<String> todos = todoBusinessImpl
+				.retrieveTodosRelatedToSpring("Dummy");
+		
+		assertEquals(2, todos.size());
+	}
+}
+
+
+/*
+ * mock() - mock crates a mock object of a class or an interface.
+ * 
+ * when(m).thenReturn(v) - When when() is called with m method, then v value id returned. With this we can assign return values to methods in the mock class.
+ * It is used to stub a method.
+*/

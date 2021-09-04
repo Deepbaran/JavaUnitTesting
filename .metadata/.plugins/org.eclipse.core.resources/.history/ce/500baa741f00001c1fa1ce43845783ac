@@ -1,0 +1,21 @@
+package com.in28minutes.junit.helper;
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+
+import org.junit.Test;
+
+public class ArraysCompareTest {
+
+	//Arrays.sort
+	
+	@Test
+	public void testArraySort_RandomArray() {
+		int[] numbers = {12, 3, 4, 1};
+		int[] expected = {1, 2, 4, 12};
+		Arrays.sort(numbers); //in-place sort
+		assertArrayEquals(expected, numbers);
+	}
+
+}

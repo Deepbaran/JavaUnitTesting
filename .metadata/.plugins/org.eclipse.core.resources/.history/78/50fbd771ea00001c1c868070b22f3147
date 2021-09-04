@@ -1,0 +1,15 @@
+package com.deepbarankar.mockito;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+//Hamcrest library maked the code more readable.
+
+public class HamcrestMatchersTest {
+
+	@Test
+	public void test() {
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.in28minutes.junit.helper;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class QuickBeforeAfterTest {
+	
+	public void setup() {
+		System.out.println("Before");
+	}
+
+	@Test
+	public void test1() {
+		System.out.println("test1 executed");
+	}
+	
+	@Test
+	public void test2() {
+		System.out.println("test2 executed");
+	}
+
+}

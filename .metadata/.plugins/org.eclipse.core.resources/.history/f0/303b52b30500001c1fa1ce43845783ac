@@ -1,0 +1,56 @@
+package com.in28minutes.junit.helper;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StringHelperTest {
+
+	/*
+	@Test
+	public void test() {
+//		assertEquals("ABC", "ABCD"); 
+		// expected, actual
+		// expected is the value that we are expecting to come out after the operation.
+		// actual is the value that comes out after whatever operation we want to do or after calling a method.
+		// expected:<ABC[]> but was:<ABC[D]>
+		
+//		assertEquals("ABC", "ABC");
+		
+		StringHelper helper = new StringHelper();
+		
+//		String actual = helper.truncateAInFirst2Positions("AACD");
+//		String expected = "CD";
+//		assertEquals(expected, actual);
+		
+		assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
+//		assertEquals("ACD", helper.truncateAInFirst2Positions("CD")); //org.junit.ComparisonFailure: expected:<[A]CD> but was:<[]CD>
+		assertEquals("CD", helper.truncateAInFirst2Positions("ACD"));
+		assertEquals("CDEF", helper.truncateAInFirst2Positions("CDEF"));
+		assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
+	}
+*/
+	@Test
+	public void testTruncateAInFirst2Positions_AinFirst2Positions() {
+		//Don't have more than one Condition in a Unit test.
+		//For multiple conditions, we will need to create another test. It helps us to figure out exactly for which test condition the test failed.
+		//The test function should be public void. Because some framework should be able to call it and the framework will be in a different package.
+		//test method naming convention: public void test<methodName>_testCondition() {}
+		StringHelper helper = new StringHelper();
+		assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
+	}
+	
+	@Test
+	public void testTruncateAInFirst2Positions_AinFirstPosition() {
+		StringHelper helper = new StringHelper();
+		assertEquals("CD", helper.truncateAInFirst2Positions("ACD"));		
+	}
+
+}
+
+/*
+@Test - This annotation comes from the org.junit.Test. It annotates that the following method is a specific test method. Make sure to give a specific name to the following method so that it is clear for which method the test is going to run.
+
+fail() - It is one of the methods in a series of assert methods that JUnit provides. A fail() would normally fail a test.
+assertEquals(expected, actual) - It checks if expected and the actuar value are equal or not.
+*/

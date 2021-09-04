@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.junit.Test"/>
+    <fullyQualifiedTypeName name="org.junit.After"/>
+    <fullyQualifiedTypeName name="org.junit.Before"/>
+    <fullyQualifiedTypeName name="org.junit.BeforeClass"/>
+    <fullyQualifiedTypeName name="org.junit.AfterClass"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="org.junit.runners.Parameterized"/>
+    <fullyQualifiedTypeName name="org.junit.runners.Parameterized.Parameters"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="com.in28minutes.data.api.TodoService"/>
+    <fullyQualifiedTypeName name="com.deepbarankar.data.api.TodoService"/>
+    <fullyQualifiedTypeName name="com.deepbarankar.data.api.TodoServiceStub"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="org.mockito.ArgumentCaptor"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="org.mockito.MockitoAnnotations.Mock"/>
+    <fullyQualifiedTypeName name="org.mockito.Mock"/>
+    <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+    <fullyQualifiedTypeName name="org.mockito.runners.MockitoJUnitRunner"/>
+    <fullyQualifiedTypeName name="com.deepbarankar.business.TodoBusinessImpl"/>
+    <fullyQualifiedTypeName name="org.mockito.InjectMocks"/>
+    <fullyQualifiedTypeName name="org.mockito.Captor"/>
+    <fullyQualifiedTypeName name="org.junit.Rule"/>
+    <fullyQualifiedTypeName name="org.mockito.junit.MockitoRule"/>
+    <fullyQualifiedTypeName name="org.mockito.junit.MockitoJUnit"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.deepbarankar.powermock.SystemUnderTest"/>
+    <fullyQualifiedTypeName name="org.powermock.modules.junit4.PowerMockRunner"/>
+    <fullyQualifiedTypeName name="org.powermock.api.mockito.PowerMockito"/>
+    <fullyQualifiedTypeName name="org.powermock.core.classloader.annotations.PrepareForTest"/>
+    <fullyQualifiedTypeName name="org.mockito.internal.util.reflection.Whitebox"/>
+    <fullyQualifiedTypeName name="org.powermock.reflect.Whitebox"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

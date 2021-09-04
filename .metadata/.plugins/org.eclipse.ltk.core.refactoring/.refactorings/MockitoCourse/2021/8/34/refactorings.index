@@ -1,0 +1,18 @@
+1629298134170	Move compilation unit
+1629298138366	Delete element
+1629299864845	Delete element
+1629299940164	Rename package 'com.in28minutes.business'
+1629299956233	Rename package 'com.in28minutes.data.api'
+1629299988996	Rename package 'com.deepbarankar.api'
+1629311152424	Rename type 'TodoBusinessImplStub'
+1629311541368	Copy compilation unit
+1629313268575	Rename local variable 'todoService'
+1629379042976	Copy compilation unit
+1629438848984	Rename package 'com.in28minutes.powermock'
+1629438890943	Move compilation unit
+1629438895318	Delete element
+1629445959230	Copy compilation unit
+1629446044841	Rename type 'TodoBusinessImplMockitoInjectMockTest'
+1629447748872	Copy compilation unit
+1629447758330	Rename type 'InvokingPrivateMethodTest2'
+1629453124318	Copy compilation unit
